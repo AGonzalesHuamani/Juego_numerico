@@ -1,6 +1,4 @@
 let numeroSecreto = generarNumeroSecreto();
-console.log(numeroSecreto);
-
 
 function asignarTextoElemento(elemento, texto ){
     let elementoHTML = document.querySelector(elemento);
@@ -8,8 +6,17 @@ function asignarTextoElemento(elemento, texto ){
     return;
 }
 
-function intentoDeUsuario () {
-    alert('Click desde el boton');
+function verificarIntento () {
+    let numeroDeUsuario = parseInt(document.getElementById('valorUsuario').value) ;
+    if(numeroDeUsuario === numeroSecreto){
+        asignarTextoElemento('p', 'Acertaste el número' );    
+    } else{
+        if(numeroDeUsuario > numeroSecreto){
+            asignarTextoElemento('p', 'El número es menor' );    
+        }else {
+            asignarTextoElemento('p', 'El número es mayor' ); 
+        }
+    }
     return;
 };
 
